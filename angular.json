@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "TodoRoutModule"
+    }
+  },
+  "defaultProject": "TodoRoutModule",
+  "cli": {
+    "analytics": false
+  }
 }
