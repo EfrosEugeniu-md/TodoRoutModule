@@ -1,26 +1,22 @@
 import {Injectable, OnInit} from '@angular/core';
 import {Todo} from './todo.model';
-
 import {Observable, from} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class ProductRepository implements OnInit {
   // @ts-ignore
   private todos: Todo[] = [
-
-    new Todo(1, 'Product 1', 'Category 1', 'Product 1 (Category 1)', 'h'),
-    new Todo(2, 'Product 2', 'Category 1', 'Product 2 (Category 1)', 'h'),
+    new Todo(1, 'tasc 1', 'Найти и выучить учебник по квантовой физике', 'Oleg', 'h', new Date('10-10-20')),
+    new Todo(2, 'tasc 2', 'Сходить на семинар по программированию', 'Vasea', 'h', new Date('02-03-19')),
   ];
-
 
   constructor() {
   }
-
   // tslint:disable-next-line:contextual-lifecycle
   ngOnInit(): void {
-
   }
 
   getTodos(): Observable<Todo[]> {
@@ -31,30 +27,19 @@ export class ProductRepository implements OnInit {
     return this.todos.find(t => t.id == id);
   }
 
-
   saveTodo(todo: Todo) {
     console.log(todo);
     if (todo.id == null || todo.id === 0) {
+      todo.id = 8;
       this.todos.push(todo);
     } else {
       this.todos.splice(this.todos.findIndex(t => t.id === todo.id),
         1, todo);
-
-      /* this.dataSource.updateProduct(product).subscribe(p => {
-          this.products.splice(this.products.
-              findIndex(p => p.id == product.id), 1, product);
-      }); */
     }
   }
-
 
   deleteProduct(id: number) {
     this.todos.splice(this.todos.findIndex(t => t.id === id),
       1);
-
-    /*  this.dataSource.deleteProduct(id).subscribe(p => {
-         this.products.splice(this.products.
-             findIndex(p => p.id == id), 1);
-     }) */
   }
 }

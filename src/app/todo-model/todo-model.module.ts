@@ -1,10 +1,6 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 import {ProductRepository} from './product.repository';
-import {StaticDataSource} from './StaticDataSource';
-
-
-
 
 @NgModule({
   declarations: [],
@@ -13,7 +9,7 @@ import {StaticDataSource} from './StaticDataSource';
   ],
   providers: [
     ProductRepository,
-    StaticDataSource
   ]
 })
-export class TodoModelModule { }
+export class TodoModelModule {
+}

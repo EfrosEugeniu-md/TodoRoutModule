@@ -1,34 +1,36 @@
-<p>todo-creat works!</p>
+<p>edit-todo works!</p>
+
 <form class="todo-form" [formGroup]="myForm">
   <input
     type="text"
     placeholder="Title"
     formControlName="title"
-    [(ngModel)]="title">
+    [(ngModel)]= todo.title>
 
   <input
     type="text"
     placeholder="Description"
     formControlName="description"
-    [(ngModel)]="description">
+    [(ngModel)]=todo.description>
 
   <input
     type="text"
     placeholder="Autor"
     formControlName="author"
-    [(ngModel)]="author">
+    [(ngModel)]=todo.author>
 
   <input
     type="text"
     placeholder="Priorety"
     formControlName="priority"
-    [(ngModel)]="priority">
+    [(ngModel)]=todo.priority>
 
   <input
     type="text"
     placeholder="Deadline"
     formControlName="deadline"
-    [(ngModel)]="deadline">
+    [(ngModel)]=todo.deadline>
 
   <button (click)="onSumbit()" [disabled]="myForm.invalid">Submit</button>
 </form>
+
