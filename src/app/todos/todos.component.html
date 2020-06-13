@@ -1,0 +1,12 @@
+<p>todos works!</p>
+<ul>
+  <li *ngFor="let todo of todos;">
+    {{ todo.id}}
+    {{ todo.title}}
+    {{ todo.description}}
+    {{ todo.author}}
+    {{ todo.priority}}
+    {{ todo.deadline}}
+    <a [routerLink]="['item', todo.id]">item 5</a>
+  </li>
+</ul>

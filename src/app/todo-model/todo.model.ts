@@ -1,9 +1,10 @@
-export class Todo { 
-    constructor( 
-    public id?: number, 
-    public name?: string, 
-    public category?: string, 
-    public description?: string, 
-    public price?: number) { }
-    }
-    
+export class Todo {
+  constructor(
+    public id?: number,
+    public title?: string,
+    public description?: string,
+    public author?: string,
+    public priority?: string,
+    public deadline?: Date) {   }
+}
+

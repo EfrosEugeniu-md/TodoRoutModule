@@ -1,8 +1,8 @@
 import { OnInit } from '@angular/core';
 //import { CommonModule } from '@angular/core';
 import {Component} from '@angular/core';
-import {ProductRepository} from '../../todo-model/product.repository';
-import {Todo} from '../../todo-model/todo.model';
+import {ProductRepository} from '../todo-model/product.repository';
+import {Todo} from '../todo-model/todo.model';
 
 @Component({
   selector: 'app-todo-list',
@@ -13,7 +13,7 @@ export class TodoListComponent implements OnInit {
 
   todos:Todo[] = [];
 
-  constructor(private repository: ProductRepository ) { 
+  constructor(private repository: ProductRepository ) {
     console.log(this.repository);
     console.log(this.todos);
   }

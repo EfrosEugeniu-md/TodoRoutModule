@@ -1,14 +1,14 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
-import {ProductRepository} from '../../todo-model/product.repository';
-import {Todo} from '../../todo-model/todo.model';
+import {ProductRepository} from '../todo-model/product.repository';
+import {Todo} from '../todo-model/todo.model';
 
 @Component({
-  selector: 'app-todo-creat',
-  templateUrl: './todo-creat.component.html',
-  styleUrls: ['./todo-creat.component.scss']
+  selector: 'app-create-todo',
+  templateUrl: './create-todo.component.html',
+  styleUrls: ['./create-todo.component.scss']
 })
-export class TodoCreatComponent implements OnInit {
+export class CreateTodoComponent implements OnInit {
   title: string;
   description: string;
   author: string;
@@ -22,28 +22,28 @@ export class TodoCreatComponent implements OnInit {
 
       title: new FormControl(null, [
         Validators.required,
-       // Validators.minLength(4),
-      //  Validators.maxLength(15)
+        // Validators.minLength(4),
+        //  Validators.maxLength(15)
       ]),
 
       description: new FormControl(null, [
         Validators.required,
-       // Validators.minLength(4),
+        // Validators.minLength(4),
       ]),
 
       author: new FormControl(null, [
         Validators.required,
-      //  Validators.minLength(4),
+        //  Validators.minLength(4),
       ]),
 
       priority: new FormControl(null, [
         Validators.required,
-     //   Validators.minLength(4),
+        //   Validators.minLength(4),
       ]),
 
       deadline: new FormControl(null, [
         Validators.required,
-      //  Validators.minLength(4),
+        //  Validators.minLength(4),
       ])
     });
 
@@ -51,7 +51,6 @@ export class TodoCreatComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
   onSumbit(): void {
     this.repository.saveTodo(new Todo(null, this.title, this.description, this.author, this.priority, this.deadline));
     this.title = null;
